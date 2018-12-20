@@ -97,6 +97,10 @@ input, select, textarea {
 	border-radius: 10px;
 	border: none;
 	margin: 5px 0;
+	opacity: 0.6;
+	transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-webkit-transition: opacity 1s ease-in-out;
 }
 
 textarea {
@@ -116,13 +120,10 @@ select:focus {
 	border: solid 2px rgb(78,187,181);
 	padding-left: 20px;
 	background-color: #f4fafa;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-select[id="state"]{
-	min-width: 250px;
+	opacity: 1.0;
+	transition: opacity .70s ease-in-out;
+	-moz-transition: opacity .70s ease-in-out;
+	-webkit-transition: opacity .70s ease-in-out;
 }
 
 input[type="checkbox"],
@@ -170,7 +171,6 @@ Flexbox
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	flex: 1 100px;
 	padding: 0 10px;
 	margin: 0 auto;
 }
@@ -182,12 +182,12 @@ Flexbox
 .flex-cont > li > input[type="text"],
 input[type="email"],
 input[type="tel"],
-select{
-	flex: 2;
+select {
+	flex: 3 650px;
 }
 
 .flex-cont > li > label {
-	flex: 1;
+	flex: 1 200px;
 }
 
 /* =================================
@@ -198,9 +198,21 @@ Media Queries
 
 	.flex-cont, h3 {
 		min-width: 600px;
-}
+	}
 
 	.container {
 		width: 90%;
+		flex-direction: row;
+	}
+
+	.flex-cont > li > input[type="text"],
+	input[type="email"],
+	input[type="tel"],
+	select {
+		flex: 3 300px;
+	}
+
+	.flex-cont > li > label {
+		flex: 1 100px;
 	}
 }
